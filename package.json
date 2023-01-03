@@ -1,0 +1,16 @@
+{
+  "name": "api-pacientes2003",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mdb-reader": "^2.2.5",
+    "ts-node": "^10.9.1"
+  }
+}
