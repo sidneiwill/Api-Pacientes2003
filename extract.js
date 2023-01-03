@@ -45,24 +45,23 @@ const tabelasDesejadas = [
   'Receitas'
 ]
 
-
-
-// Mapear todas as tabelas
-// tabelas.map((tab) => result.push(reader.getTable(tab).getData()));
-
-
-
 // Mapear somente tabelas definidas em tabelasDesejadas.
 function extractOne(){
   tabelasDesejadas.map((tab) => result.push(reader.getTable(tab).getData()));
   writeFile("pacientesData.json", JSON.stringify(result), 'utf-8', (()=>console.log("Finished")))
 }
 
-// Extrair todos as tabelas e salvar cada uma em um arquivo JSON específico.
+// Extrair todos as tabelas e salvar todas individualmente em um arquivo JSON dentro de um diretório específico.
 function extractAll(){
-  for (const table of tabelasDesejadas) {
-    let result = [];
-    result.push(reader.getTable(table).getData())
-    writeFile(table + ".json", JSON.stringify(result), 'utf-8', (()=>console.log("Finished")))
+  try {
+    for (const table of tabelasDesejadas) {
+      let result = [];
+      result.push(reader.getTable(table).getData())
+      writeFile('rippedData/' + table + ".json", JSON.stringify(result), 'utf-8', (()=>console.log("Finished")))
+    }
+  } catch(err){
+    console.log(err)
   }
 }
+
+extractAll();
