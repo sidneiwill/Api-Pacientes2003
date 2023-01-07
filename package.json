@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "mdb-reader": "^2.2.5",
+    "styled-components": "^5.3.6",
     "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26"
   }
 }
